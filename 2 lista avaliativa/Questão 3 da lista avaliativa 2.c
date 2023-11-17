@@ -1,56 +1,68 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 
-void preencheMatriz(int tamanho, int matriz[tamanho][tamanho]) {
-    // Lê a sequência do usuário
-    for (int i = 0; i < tamanho; i++) {
-        for (int j = 0; j < tamanho; j++) {
-            scanf("%d", &matriz[i][j]);
-        }
+
+int main(){
+    int matrizA[4][4];
+    int matrizB[4][4];
+    int resultado[4][4];
+    char operacao[5];
+    
+    for (int i = 0; i < 4; i++)
+    {
+      for (int j = 0; j < 4; j++)
+      {
+         scanf("%d",&matrizA[i][j]);
+      }
     }
-}
-
-void imprimeMatriz(int tamanho, int matriz[tamanho][tamanho]) {
-    // Imprime a matriz com espaçamento justificado à direita
-    for (int i = 0; i < tamanho; i++) {
-        for (int j = 0; j < tamanho; j++) {
-            printf("%4d ", matriz[i][j]);
-        }
-        printf("\n");
+    for (int i = 0; i < 4; i++)
+    {
+      for (int j = 0; j < 4; j++)
+      {
+         scanf("%d",&matrizB[i][j]);
+      }
     }
-}
 
-void operaMatrizes(char operacao[], int tamanho, int matrizA[tamanho][tamanho], int matrizB[tamanho][tamanho], int resultado[tamanho][tamanho]) {
-    for (int i = 0; i < tamanho; i++) {
-        for (int j = 0; j < tamanho; j++) {
-            if (strcmp(operacao, "soma") == 0) {
+    scanf("%s", operacao);
+
+    if (strcmp(operacao,"soma")==0)
+    {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
                 resultado[i][j] = matrizA[i][j] + matrizB[i][j];
-            } else if (strcmp(operacao, "sub") == 0) {
+            }
+        }
+     }
+    else if (strcmp(operacao,"sub")==0)
+    {
+       for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
                 resultado[i][j] = matrizA[i][j] - matrizB[i][j];
-            } else if (strcmp(operacao, "mult") == 0) {
-                resultado[i][j] = matrizA[i][j] * matrizB[i][j];
+            }
+       }
+    }
+    else if (strcmp(operacao,"mult")==0)
+    {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                resultado[i][j]=0;
+                
+                for (int k = 0; k < 4; k++) {
+                  resultado[i][j] += matrizA[i][k] * matrizB[k][j];
+                 }
             }
         }
     }
-}
-
-int main() {
-    int tamanho = 4;
-    int matrizA[tamanho][tamanho];
-    int matrizB[tamanho][tamanho];
-    int resultado[tamanho][tamanho];
-
-    preencheMatriz(tamanho, matrizA);
-    preencheMatriz(tamanho, matrizB);
-
-    char operacao[5];
-    scanf("%s", operacao);
-
-    operaMatrizes(operacao, tamanho, matrizA, matrizB, resultado);
-
-    imprimeMatriz(tamanho, resultado);
-
+    
+    
+    for (int i = 0; i < 4; i++)
+    {
+      for (int j = 0; j < 4; j++)
+      {
+         printf("%*d",+4,resultado[i][j]);
+      }
+      printf("\n");
+    }
     return 0;
 }
 

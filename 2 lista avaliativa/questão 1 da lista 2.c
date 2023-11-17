@@ -1,27 +1,32 @@
-#include <stdio.h>
+##include <stdio.h>
 
 int main(){
-    int num1 = 10;
+    int num = 10;
     int valores[10];
-    for (int i = 0; i < num1--; i++) {
+    int conjunto_novo[10];
+    for (int i = 0; i < num; i++) {
         scanf("%d", &valores[i]);
     }
-    while (num1 > 1)
+    while (num > 1)
     {
-         for (int i = 0; i < num1; i++) {
+         for (int i = 0; i < num; i++) {
             printf("%d", valores[i]);
             
-            if (i < num1 - 1) {
-                printf(" ");// ver como fazer isso de forma mais eficiente 
+            if (i < num - 1) {
+                printf(" ");
              }
          }
          printf("\n");
-         for (int i = 0; i < num1 - 1; i++)
+         for (int i = 0; i < num - 1; i++)
          {
-            valores[i] = valores[i] + valores[i+1];
+            conjunto_novo[i] = valores[i] + valores[i+1];
          }
-         num1--;
-        
+         num--;
+         for (int i = 0; i < num; i++)
+         {
+            valores[i] = conjunto_novo[i];
+         }
+         
     }
     printf("%d\n", valores[0]);
     
