@@ -1,4 +1,4 @@
-e#include <stdio.h>// atenção tem um switch case para colocar as variaveis 1,2,3 ;
+#include <stdio.h>// atenção tem um switch case para colocar as variaveis 1,2,3 ;
 int main()
 { 
     int valor,nota1,nota2,nota3,media;
