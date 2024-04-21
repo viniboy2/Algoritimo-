@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/vigob/OneDrive/Documentos/0/Algoritimo-exemplos-e-anota-oes-de-aula-/calculadora",
-      "program": "c:/Users/vigob/OneDrive/Documentos/0/Algoritimo-exemplos-e-anota-oes-de-aula-/calculadora/build/Debug/outDebug",
+      "cwd": "c:/Users/vigob/OneDrive/Documentos/0/Algoritimo-ucb/calculadora",
+      "program": "c:/Users/vigob/OneDrive/Documentos/0/Algoritimo-ucb/calculadora/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
